@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Converter</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Currency Converter">
+  <meta name="author" content="Aadil Rai Mehra">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/prettify/css/zenburn.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Currency Converter</h1>
+    <h2>Hosted on shinyapps.io</h2>
+    <p>Aadil Rai Mehra<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Description</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The currency converter app is used to convert USD into INR as per the currency conversion on a date specified by the user.  </p>
+
+<p>It also makes an assumption that the currency conversion fee (if applicable) is equal to INR 10, and accordingly reduces this from the converted amount.  </p>
+
+<p>The app is useful for people who want to know the USD-INR conversion on a hostorical date, so as to settle previous dues.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Input Data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The app requires the user to provide the following information:   </p>
+
+<ul>
+<li>An amount in USD that needs to be converted<br></li>
+<li>A date, as on which the USD-INR conversion rate will be calculated<br></li>
+<li>A Yes / No response to whether a conversion fee is applicable</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Output</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Based on the data provided by the user, the app gives the following output:   </p>
+
+<ul>
+<li>Confirms the USD amount and date entered by the user<br></li>
+<li>Gives the USD-INR conversion rate according to the date specified by the user <strong>(currently the app only has data from November 01, 2014 to November 23, 2014)</strong><br></li>
+<li>Adds a conversion fee based on the selection of Yes / No provided by the user in the radio button<br></li>
+<li>Calculates the net amount received using the formula<br>
+Amount Received = USD Amount * Conversion Rate - Conversion Fee</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Assume the user gives the following input<br>
+Amount : USD 10<br>
+Date : 20 November 2014<br>
+Conversion Fee Applicable : Yes   </p>
+
+<p>According to this input, R will make the following calculations</p>
+
+<pre><code class="r">Amount.Entered &lt;- 10
+Conversion.Date &lt;- as.Date(&quot;2014-11-20&quot;)
+Conversion.Rate &lt;- 59.8 #this rate is obtained from an if-else function defined in server.R
+Conversion.Fee &lt;- 10 #this amount is obtained from a function defined in server.R
+Net.Amount &lt;- (Amount.Entered*Conversion.Rate) - Conversion.Fee
+print(Net.Amount)
+</code></pre>
+
+<pre><code>## [1] 588
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Description'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Input Data'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Output'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Example'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- Google Prettify -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+  <script src='libraries/highlighters/prettify/js/lang-r.js'></script>
+  <script>
+    var pres = document.getElementsByTagName("pre");
+    for (var i=0; i < pres.length; ++i) {
+      pres[i].className = "prettyprint linenums";
+    }
+    prettyPrint();
+  </script>
+  <!-- End Google Prettify --> 
+  </html>
