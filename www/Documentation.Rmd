@@ -1,0 +1,21 @@
+Documentation for Currency Converter Application on Shiny
+==========================================================
+
+Description
+------------
+The currency converter app is used to convert USD into INR as per the currency conversion on a date specified by the user.  
+
+Usage
+-----
+The app requires the user to provide the following information:   
+- An amount in USD that needs to be converted. This can be manually entered in the field "Enter Amount". The amount in this box can also be increased / decreased using the up / down scroll keys next to the box.   
+- A date, as on which the USD-INR conversion rate will be calculated. The date can be selected from a drop-down calendar when the user clicks on this field.  
+- A Yes / No response to whether a conversion fee is applicable. The user simply has to select a yes / no from the radio button options available under this question.  
+- The user must click on the "Calculate Amount" button once he/she has filled in the required details.  
+  
+  
+The app automatically updates the amount entered and the date in the right hand side output as the user is entering the data. Clicking "Calculate Amount" then populates the values for the Conversion rate, Conversion fee and Net Amount Received.  
+  
+Note to User
+------------
+The application currently contains hypothetical USD-INR conversion rates only for the period November 01, 2014 to November 23,2014. If the user selects any other date outside this range, then the output will show a warning saying "Data not available for this date", and accordingly Net Amount will show NA.
